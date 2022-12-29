@@ -18,6 +18,8 @@ Uri partUrix86 = PackUriHelper.CreatePartUri(new Uri(X86_FILENAME, UriKind.Relat
 
 // Creamos el paquete
 using (Package package = Package.Open(PACKAGE_FILENAME, FileMode.Create)) {
+    package.PackageProperties.Version = "1.22.2";
+
     // Añadimos los archivos al paquete
     PackagePart packagePartx64 = package.CreatePart(partUrix64, System.Net.Mime.MediaTypeNames.Application.Octet, CompressionOption.Maximum);
     PackagePart packagePartx86 = package.CreatePart(partUrix86, System.Net.Mime.MediaTypeNames.Application.Octet, CompressionOption.Maximum);
